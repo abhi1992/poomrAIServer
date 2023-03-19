@@ -4,15 +4,51 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js",
+    "watch": "watch 'npm run start' .",
+    "test": "jest",
+    "test:cover": "jest --coverage"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jasmine": true,
+      "jest": true,
+      "es6": true
+    },
+    "rules": {
+      "brace-style": [
+        "error",
+        "stroustrup"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "no-unused-vars": [
+        "warn"
+      ],
+      "no-var": [
+        "off"
+      ],
+      "one-var": [
+        "off"
+      ]
+    }
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "eslint": "^8.36.0",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "watch": "^0.13.0"
   },
   "devDependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "jest": "^29.5.0"
   }
 }
